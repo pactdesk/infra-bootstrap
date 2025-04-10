@@ -19,7 +19,7 @@ repos:
     rev: "v0.19.0"
     hooks:
       - id: terraform-docs-go
-        args: ["--config", ".terraform-docs.yml", "./terraform"]
+        args: ["--config", ".terraform-docs.yml"]
         name: "📚 Generate Terraform docs"
 
   - repo: https://github.com/antonbabenko/pre-commit-terraform
