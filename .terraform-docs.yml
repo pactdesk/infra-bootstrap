@@ -1,0 +1,7 @@
+formatter: "markdown"
+recursive:
+  enabled: true
+  path: "./terraform"
+  include-main: false
+output:
+  file: "README.md"
