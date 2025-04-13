@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   ci:
+    name: Pre-commit checks
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -15,7 +16,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install terraform
+      - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.11.2"
@@ -28,7 +29,7 @@ jobs:
             ~/.cache/pre-commit-hooks
           key: pre-commit-3|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
 
-      - name: pre-commit installation
+      - name: Pre-commit installation
         id: pre-commit-install
         run: |
           curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
